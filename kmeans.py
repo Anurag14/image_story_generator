@@ -38,7 +38,7 @@ X = X.reshape(X.shape[0],X.shape[1] * X.shape[2] * X.shape[3])
 #now clustering the input 
 
 
-cluster=input("How many clusters do you want?\n")
+cluster=int(input("How many clusters do you want?\n"))
 kmeans=KMeans(n_clusters=cluster)
 kmeans.fit(X)
 centroids = kmeans.cluster_centers_
@@ -47,7 +47,7 @@ dictionary={cluster_label: np.where(kmeans.labels_ == cluster_label)[0] for clus
 dx=[]
 for cluster_label in range(cluster):
     for item in dictionary[cluster_label]:
-        if X[item]==centroids[cluter_label]:
+        if np.array_equal(X[item],centroids[cluster_label]):
             dx.append(item)
             break
 dx.sort()

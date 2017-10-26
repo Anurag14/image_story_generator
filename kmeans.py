@@ -43,13 +43,8 @@ kmeans=KMeans(n_clusters=cluster)
 kmeans.fit(X)
 centroids = kmeans.cluster_centers_
 print(kmeans.labels_)
-dictionary={cluster_label: np.where(kmeans.labels_ == cluster_label)[0] for cluster_label in range(kmeans.n_clusters)}
 dx=[]
-for cluster_label in range(cluster):
-    for item in dictionary[cluster_label]:
-        if np.array_equal(X[item],centroids[cluster_label]):
-            dx.append(item)
-            break
+dx, _ = pairwise_distances_argmin_min(kmeans.cluster_centers_, X)
 dx.sort()
 
 #now we save the images in a destination folder corresponding to indices in the list dx

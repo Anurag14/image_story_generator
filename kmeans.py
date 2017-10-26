@@ -52,10 +52,11 @@ dx.sort()
 import shutil
 dest_dir = input("Please enter your absolute dest image directory, all images in *.jpg format\n")
 counter=0
+i = 0
 for jpgfile in glob.iglob(os.path.join(src_dir, "*.jpg")):
-    if(counter>len(dx)):
-        break
+    if( i >= len(dx)):
+        break;
     if(counter==dx[i]):
         i+=1
-        shutil.copy(jpgfile, dst_dir)
+        shutil.copy(jpgfile, dest_dir)
     counter+=1

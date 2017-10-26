@@ -3,6 +3,7 @@ import numpy as np
 import os
 import glob
 from sklearn.cluster import KMeans
+from sklearn.metrics import pairwise_distances_argmin_min
 # resize an image using the PIL image library
 
 import PIL

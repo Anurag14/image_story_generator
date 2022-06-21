@@ -4,7 +4,7 @@ html5lib==0.9999999
 Keras==2.0.8
 Markdown==2.6.9
 matplotlib==2.0.2
-numpy==1.13.1
+numpy==1.22.0
 protobuf==3.4.0
 pyparsing==2.2.0
 python-dateutil==2.6.1
